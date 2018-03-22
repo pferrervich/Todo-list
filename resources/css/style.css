@@ -161,6 +161,7 @@ ul.todo li .buttons button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
+  cursor:pointer;
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -190,10 +191,54 @@ ul.todo li .buttons button svg {
   margin: -11px 0 0 -11px;
 }
 
+/*Transition on which the icon changes color*/
+ul.todo li .buttons button svg .fill{
+  transition: fill 0.2s ease;
+
+  -webkit-transition:fill 0.2s ease;
+  -moz-transition:fill 0.2s ease;
+  -ms-transition:fill 0.2s ease;
+  -o-transition:fill 0.2s ease;
+}
+
+/* "Delete" svg fill color and hover*/
 ul.todo li .buttons button.remove svg .fill{
   fill: #c0cecb;
 }
 
 ul.todo li .buttons button.remove:hover svg .fill{
   fill: #e85656;
+}
+
+/* "Complete svg fill color " */
+ul.todo li .buttons button.complete svg .fill{
+  fill: #0099FF;
+}
+
+/* "Complete" circle */
+ul.todo li .buttons button.complete svg{
+  border-radius: 11px;
+  border: 1.5px solid #0099FF;
+
+    transition: background 0.2s ease;
+}
+
+
+ul.todo#completed li .buttons button.complete svg {
+  background: #0099FF;
+  border: 0px;
+}
+
+/*Sets background of the circle when hovered*/
+ul.todo:not(#completed) li .buttons button.complete:hover svg {
+  background: rgba(0,153,255,0.6);
+}
+
+/* Fills the V */
+ul.todo:not(#completed) li .buttons button.complete:hover svg .fill {
+  fill:#ffffff;
+}
+
+ul.todo#completed li .buttons button.complete svg .fill{
+  fill: #ffffff;
 }
