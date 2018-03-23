@@ -9,7 +9,11 @@ var completeSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:x
 document.getElementById('add').addEventListener('click', function() {
   var value = document.getElementById('item').value;
 
-  if (value) addItemTodo(value);
+  if (value) {
+    addItemTodo(value);
+    //Resets the value
+    document.getElementById('item'.value = '')
+  }
 });
 
 //Add new item to the to-do list
@@ -33,5 +37,7 @@ function addItemTodo(text){
   buttons.appendChild(remove);
   buttons.appendChild(complete);
   item.appendChild(buttons);
-  list.appendChild(item);
+
+  //Adds the items in descending order
+  list.insertBefore(item, list.childNodes[0]);
 }
