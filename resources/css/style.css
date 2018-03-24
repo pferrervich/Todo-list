@@ -239,6 +239,23 @@ ul.todo:not(#completed) li .buttons button.complete:hover svg .fill {
   fill:#ffffff;
 }
 
-ul.todo#completed li .buttons button.complete svg .fill{
+ul.todo#completed li .buttons button.complete svg .fill {
   fill: #ffffff;
+}
+
+
+ul.todo#completed:not(:empty) {
+  position: relative;
+  padding: 60px 0 0 0;
+}
+
+ul.todo#completed:not(:empty):before {
+  content: '';
+  width:150px;
+  height: 1px;
+  background: #d8e5e0;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin: 0 0 0 -75px;
 }
