@@ -261,7 +261,7 @@ ul.todo#completed:before {
   margin: 0 0 0 -75px;
 }
 
-ul.todo#todo:after {
+ul.todo#todo:empty:after {
   content: 'No tienes nada que hacer!';
   margin: 15px 0 0 0;
 }
@@ -270,8 +270,8 @@ ul.todo#completed:empty:after {
   content: 'Aún no tienes tareas completadas.';
 }
 
-ul.todo#todo:empty:after,
-ul.todo#completed:empty:after {
+ul.todo#todo:after,
+ul.todo#completed:after {
   width: 100%;
   display: block;
   text-align: center;
