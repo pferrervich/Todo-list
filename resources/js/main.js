@@ -22,15 +22,26 @@ document.getElementById('add').addEventListener('click', function() {
   var value = document.getElementById('item').value;
 
   if (value) {
-    addItemTodo(value);
-    //Resets the value
-    document.getElementById('item').value = '';
-
-    data.todo.push(value);
-    dataObjectUpdated();
-
+    addItem(value);
   }
 });
+
+//Enter key adds item
+document.getElementById('item').addEventListener('keydown', function(e){
+  var value = this.value;
+  if (e.code === 'Enter' && value ){
+    addItem(value);
+  }
+});
+
+function addItem(value) {
+  addItemTodo(value);
+  //Resets the value
+  document.getElementById('item').value = '';
+
+  data.todo.push(value);
+  dataObjectUpdated();
+}
 
 //Renders the stored JSON values
 function renderTodoList(){
